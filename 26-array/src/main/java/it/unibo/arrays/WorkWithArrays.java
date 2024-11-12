@@ -1,6 +1,5 @@
 package it.unibo.arrays;
 
-import java.util.Arrays;
 import java.util.*;
 
 class WorkWithArrays {
@@ -16,27 +15,11 @@ class WorkWithArrays {
     }
 
     static int[] evenElements(final int[] array) {
-        int[] ris = new int[array.length/2];
-        int contatore = 0;
-        for(int i=0; i<array.length; i++) {
-            if(i%2==0) {
-                ris[contatore]=array[i];
-                contatore++;
-            }
-        }
-        return ris;
+       
     }
 
     static int[] oddElements(final int[] array) {
-        int[] ris = new int[array.length/2];
-        int contatore = 0;
-        for(int i=0; i<array.length; i++) {
-            if(i%2==1) {
-                ris[contatore]=array[i];
-                contatore++;
-            }
-        }
-        return ris;
+        
     }
 
     static int mostRecurringElement(final int[] array) {
