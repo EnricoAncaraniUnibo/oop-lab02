@@ -1,7 +1,6 @@
 package it.unibo.arrays;
 
 import java.util.Arrays;
-import java.util.LinkedList;
 import java.util.*;
 
 class WorkWithArrays {
@@ -52,8 +51,8 @@ class WorkWithArrays {
         }
         maggiore=map.keySet().iterator().next();
         for (int i : map.keySet()) {
-            if(map.get(maggiore)<map.get(i)) {
-                maggiore=i;
+            if(map.get(maggiore) < map.get(i)) {
+                maggiore = i;
             }
         }
         return maggiore;

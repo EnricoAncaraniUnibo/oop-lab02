@@ -16,14 +16,45 @@ class SeqRecognizer {
      * Recognizes: 1{2}3.
      */
     static boolean checkSeq2(final int[] array) {
-        return false;
+        int i = 0;
+        try {
+            if(array[i] == 1) {
+                i++;
+                for(; i < array.length && array[i] == 2; i++);
+                if(array[i] == 3) {
+                    i++;
+                    return i == array.length;
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /*
      * Recognizes: 1{2}3{4}[5].
      */
     static boolean checkSeq3(final int[] array) {
-        return false;
+        try {
+            int i = 0;
+            if(array[i] == 1) {
+                i++;
+                for(; i < array.length && array[i] == 2; i++);
+                if(array[i] == 3) {
+                    i++;
+                    for(; i < array.length && array[i] == 4; i++);
+                    if(i < array.length) {
+                        if(array[i] == 5) {
+                            return i == array.length;
+                        }
+                    }
+                }
+            }
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /*
