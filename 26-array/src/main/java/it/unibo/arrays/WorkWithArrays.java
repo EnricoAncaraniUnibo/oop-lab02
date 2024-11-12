@@ -64,7 +64,29 @@ class WorkWithArrays {
     }
 
     static int[] sortArray(final int[] array, final boolean isDescending) {
-        return array;
+        int[] ris = array;
+        if(isDescending == false) {
+            for(int i = ris.length - 1; i >=0; i--) {
+                for(int j = 0; j < i; j++) {
+                    if(ris[j] > ris[j+1]) {
+                        int temp = ris[j+1];
+                        ris[j+1] = ris[j];
+                        ris[j] = temp;
+                    }
+                }
+            }
+        } else {
+            for(int i = ris.length - 1; i >=0; i--) {
+                for(int j = 0; j < i; j++) {
+                    if(ris[j] < ris[j+1]) {
+                        int temp = ris[j+1];
+                        ris[j+1] = ris[j];
+                        ris[j] = temp;
+                    }
+                }
+            }
+        }
+        return ris;
     }
 
     static double computeVariance(final int[] array) {
