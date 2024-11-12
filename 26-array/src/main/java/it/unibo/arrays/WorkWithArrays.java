@@ -2,6 +2,7 @@ package it.unibo.arrays;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.*;
 
 class WorkWithArrays {
 
@@ -16,15 +17,46 @@ class WorkWithArrays {
     }
 
     static int[] evenElements(final int[] array) {
-        return null;
+        int[] ris = new int[array.length/2];
+        int contatore = 0;
+        for(int i=0; i<array.length; i++) {
+            if(i%2==0) {
+                ris[contatore]=array[i];
+                contatore++;
+            }
+        }
+        return ris;
     }
 
     static int[] oddElements(final int[] array) {
-        return null;
+        int[] ris = new int[array.length/2];
+        int contatore = 0;
+        for(int i=0; i<array.length; i++) {
+            if(i%2==1) {
+                ris[contatore]=array[i];
+                contatore++;
+            }
+        }
+        return ris;
     }
 
     static int mostRecurringElement(final int[] array) {
-        return 0;
+        Map<Integer,Integer> map = new HashMap<>();
+        int maggiore;
+        for (int i : array) {
+            if(map.containsKey(i)) {
+                map.replace(i, map.get(i)+1);
+            } else {
+                map.put(i, 1);
+            }
+        }
+        maggiore=map.keySet().iterator().next();
+        for (int i : map.keySet()) {
+            if(map.get(maggiore)<map.get(i)) {
+                maggiore=i;
+            }
+        }
+        return maggiore;
     }
 
     static int[] sortArray(final int[] array, final boolean isDescending) {
@@ -134,18 +166,6 @@ class WorkWithArrays {
     static boolean testDuplicateElements() {
         return Arrays.equals(duplicateElements(new int[] { 1, 2, 3 }, 2), new int[] { 1, 1, 2, 2, 3, 3 })
             && Arrays.equals(duplicateElements(new int[] { 1, 2 }, 5), new int[] { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 });
-    }
-
-    static int[] evenElements(int[] array) {
-        int[] ris = new int[array.length/2];
-        int contatore = 0;
-        for(int i=0; i<array.length; i++) {
-            if(i%2==0) {
-                ris[contatore]=array[i];
-                contatore++;
-            }
-        }
-        return ris;
     }
 
     public static void main(final String[] args) {
