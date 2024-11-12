@@ -1,6 +1,7 @@
 package it.unibo.arrays;
 
 import java.util.Arrays;
+import java.util.LinkedList;
 
 class WorkWithArrays {
 
@@ -52,6 +53,13 @@ class WorkWithArrays {
 
     /* Utility method for testing countOccurr method */
     static boolean testCountOccurrencies() {
+        return countOccurrencies(new int[] { 1, 2, 3, 4 }, 1) == 1
+            && countOccurrencies(new int[] { 0, 2, 3, 4 }, 1) == 0
+            && countOccurrencies(new int[] { 7, 4, 1, 9, 3, 1, 5 }, 2) == 0
+            && countOccurrencies(new int[] { 1, 2, 1, 3, 4, 1 }, 1) == 3;
+    }
+
+    static boolean testCountOccurrencies2() {
         return countOccurrencies(new int[] { 1, 2, 3, 4 }, 1) == 1
             && countOccurrencies(new int[] { 0, 2, 3, 4 }, 1) == 0
             && countOccurrencies(new int[] { 7, 4, 1, 9, 3, 1, 5 }, 2) == 0
@@ -128,6 +136,18 @@ class WorkWithArrays {
             && Arrays.equals(duplicateElements(new int[] { 1, 2 }, 5), new int[] { 1, 1, 1, 1, 1, 2, 2, 2, 2, 2 });
     }
 
+    static int[] evenElements(int[] array) {
+        int[] ris = new int[array.length/2];
+        int contatore = 0;
+        for(int i=0; i<array.length; i++) {
+            if(i%2==0) {
+                ris[contatore]=array[i];
+                contatore++;
+            }
+        }
+        return ris;
+    }
+
     public static void main(final String[] args) {
         System.out.println("testCountOccurr: " + testCountOccurrencies());
         System.out.println("testEvenElems: " + testEvenElements());
@@ -137,5 +157,6 @@ class WorkWithArrays {
         System.out.println("testComputeVariance: " + testComputeVariance());
         System.out.println("testRevertUpTo: " + testRevertUpTo());
         System.out.println("testDupElems: " + testDuplicateElements());
+        System.out.println("test2"+testCountOccurrencies2());
     }
 }
