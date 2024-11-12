@@ -1,7 +1,6 @@
 package it.unibo.arrays;
 
 import java.util.*;
-import java.math.*;
 
 class WorkWithArrays {
 
