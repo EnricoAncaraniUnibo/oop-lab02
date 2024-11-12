@@ -15,11 +15,33 @@ class WorkWithArrays {
     }
 
     static int[] evenElements(final int[] array) {
-       
+        int[] ris;
+        int j = 0;
+        if(array.length % 2 == 0) {
+            ris = new int[array.length / 2];
+        } else {
+            ris = new int[array.length / 2 + 1];
+        }
+        for(int i = 0; i < array.length; i++) {
+            if(i % 2 == 0) {
+                ris[j] = array[i];
+                j++;
+            }
+        }
+        return ris;
     }
 
     static int[] oddElements(final int[] array) {
-        
+        int[] ris;
+        int j = 0;
+        ris = new int[array.length / 2];
+        for(int i = 0; i < array.length; i++) {
+            if(i % 2 == 1) {
+                ris[j] = array[i];
+                j++;
+            }
+        }
+        return ris;
     }
 
     static int mostRecurringElement(final int[] array) {
