@@ -46,8 +46,11 @@ class SeqRecognizer {
                     for(; i < array.length && array[i] == 4; i++);
                     if(i < array.length) {
                         if(array[i] == 5) {
+                            i++;
                             return i == array.length;
                         }
+                    } else {
+                        return i == array.length;
                     }
                 }
             }
@@ -61,7 +64,20 @@ class SeqRecognizer {
      * Recognizes: [2|3]{4}5.
      */
     static boolean checkSeq4(final int[] array) {
-        return false;
+        try {
+            int i = 0;
+            if(array[i] == 2 || array[i] == 3) {
+                i++;
+            }
+            for(; i < array.length && array[i] == 4; i++);
+            if(array[i] == 5) {
+                i++;
+                return i == array.length;
+            }
+            return false;
+        } catch (Exception e) {
+            return false;
+        }
     }
 
     /** Testing methods **/
