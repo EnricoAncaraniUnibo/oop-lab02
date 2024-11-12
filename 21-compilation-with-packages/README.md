@@ -16,3 +16,9 @@ restituisce, fra i contenuti, anche `src`.
 8. Si punti il terminale in `bin/compilation/lab/math/`
 9. Si provi ad eseguire la classe usando il comando: `java ComplexNum`
     - Oh-oh... errore. Perché? Eppure il file `ComplexNum.class` è proprio lì. Si provi a comprenderne la ragione e a correggere il comando.
+
+cat .\src\compilation\lab\math\ComplexNum.java
+javac -d bin src\compilation\lab\math\ComplexNum.java
+dir bin
+java -cp bin compilation.lab.math.ComplexNum
+java -cp ..\..\..\ compilation.lab.math.ComplexNum
