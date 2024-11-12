@@ -25,3 +25,14 @@
     - In Unix, `/`
     - In Windows, `C:\` (o altra lettera di unità se il file non è stato scompattato in `C:`
 4. Senza cambiare la posizione del terminale, si esegua nuovamente `Calculator`
+
+mkdir bin
+javac -d bin src\Calculator.java
+dir bin
+cd bin
+java Calculator
+
+cd ..
+java -cp bin Calculator
+cd .. tante volte
+java -cp .\Users\enrico.ancarani\Desktop\oop-lab02\20-compilation-basics\bin\ Calculator
