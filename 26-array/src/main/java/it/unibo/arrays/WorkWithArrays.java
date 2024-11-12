@@ -1,6 +1,7 @@
 package it.unibo.arrays;
 
 import java.util.*;
+import java.math.*;
 
 class WorkWithArrays {
 
@@ -90,7 +91,22 @@ class WorkWithArrays {
     }
 
     static double computeVariance(final int[] array) {
-        return 0;
+        double media = 0;
+        for (int i : array) {
+            media = media + i;
+        }
+        media=media/array.length;
+        double[] listaScarti = new double[array.length];
+        for(int i = 0; i < array.length; i++) {
+            double temp = Math.abs(media-array[i]);
+            listaScarti[i] = temp*temp;
+        }
+        double varianza = 0;
+        for (double d : listaScarti) {
+            varianza = varianza + d;
+        }
+        varianza = varianza / array.length;
+        return varianza;
     }
 
     static int[] revertUpTo(final int[] array, final int element) {
